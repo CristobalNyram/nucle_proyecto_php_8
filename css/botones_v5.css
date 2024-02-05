@@ -1,0 +1,734 @@
+.btn-img {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: transparent;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Actividad {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Actividad/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 200px;
+  height: 30px;
+}
+
+.Actividad:hover {
+  background-image: url("../img/Actividad/1.png");
+}
+
+.Adelante {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Adelante/01.png");
+  top: -30px;
+  border-color: transparent;
+  width: 100%;
+  height: 50px;
+  left: -40px;
+}
+
+.Adelante:hover {
+  background-image: url("../img/Adelante/02.png");
+}
+
+.Atras {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Atras/1.png");
+  top: -35px;
+  border-color: transparent;
+  width: 100%;
+  height: 50px;
+  left: -60px;
+}
+
+.Atras:hover {
+  background-image: url("../img/Atras/2.png");
+}
+
+.DescargarEvidencia {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/DescargarEvidencia/2.png");
+  top: -10px;
+  border-color: transparent;
+  width: 150px;
+  height: 40px;
+}
+
+.DescargarEvidencia:hover {
+  background-image: url("../img/DescargarEvidencia/1.png");
+}
+
+.Ejercicio {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Ejercicio/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 200px;
+  height: 30px;
+}
+
+.Ejercicio:hover {
+  background-image: url("../img/Ejercicio/1.png");
+}
+
+.Evaluar {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Evaluar/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Evaluar:hover {
+  background-image: url("../img/Evaluar/1.png");
+}
+
+.Falso {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Actividad/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 10%;
+  height: 30px;
+}
+
+.Falso:hover {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Falso/F1.png");
+  background-repeat: no-repeat;
+  border: 0cm;
+  height: 100px;
+  width: 500px;
+  cursor: pointer;
+}
+
+.Verdadero {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Actividad/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 10%;
+  height: 30px;
+}
+
+.Verdadero:hover {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Verdadero/V1.png");
+  background-repeat: no-repeat;
+  border: 0cm;
+  height: 100px;
+  width: 500px;
+  cursor: pointer;
+}
+
+.Video {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Video/2.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 200px;
+  height: 30px;
+}
+
+.Video:hover {
+  background-image: url("../img/Video/1.png");
+}
+
+
+.GooglePlay {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/GooglePlay/googleplaybadge.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+
+.AppStore {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/AppStore/App_store.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Home {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/Home/home_1.png");
+  top: -35px;
+  border-color: transparent;
+  width: 30%;
+  height: 50px;
+}
+
+.Home:hover {
+  background-image: url("../img/Home/home_2.png");
+}
+
+.CotinuarAprendizaje {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  margin: 10px;
+  background-image: url("../img/ContinuarAprendizaje/BOTON_continuar_01.png");
+  top: -30px;
+  border-color: transparent;
+  width: 100%;
+  height: 50px;
+  left: -50px;
+}
+
+.CotinuarAprendizaje:hover {
+  background-image: url("../img/ContinuarAprendizaje/BOTON_continuar_02.png");
+}
+
+.Mostrar 
+{
+  background-image: url("../img/Mostrar/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 10%;
+  height: 30px;
+}
+
+.Mostrar:hover 
+{
+  background-image: url("../img/Mostrar/02.png");
+}
+
+.Modulo_1 
+{
+  background-image: url("../img/Modulo1/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_1:hover 
+{
+  background-image: url("../img/Modulo1/02.png");
+}
+
+.Modulo_2 
+{
+  background-image: url("../img/Modulo2/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_2:hover 
+{
+  background-image: url("../img/Modulo2/02.png");
+}
+
+.Modulo_3 
+{
+  background-image: url("../img/Modulo3/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_3:hover 
+{
+  background-image: url("../img/Modulo3/02.png");
+}
+
+.Modulo_4 
+{
+  background-image: url("../img/Modulo4/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_4:hover 
+{
+  background-image: url("../img/Modulo4/02.png");
+}
+
+.Modulo_5 
+{
+  background-image: url("../img/Modulo5/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_5:hover 
+{
+  background-image: url("../img/Modulo5/02.png");
+}
+
+.Modulo_6 
+{
+  background-image: url("../img/Modulo6/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_6:hover 
+{
+  background-image: url("../img/Modulo6/02.png");
+}
+
+.Modulo_7 
+{
+  background-image: url("../img/Modulo7/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_7:hover 
+{
+  background-image: url("../img/Modulo7/02.png");
+}
+
+.Modulo_8 
+{
+  background-image: url("../img/Modulo8/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_8:hover 
+{
+  background-image: url("../img/Modulo8/02.png");
+}
+
+.Modulo_9 
+{
+  background-image: url("../img/Modulo9/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_9:hover 
+{
+  background-image: url("../img/Modulo9/02.png");
+}
+
+.Modulo_10 
+{
+  background-image: url("../img/Modulo10/01.png");
+  margin-top: -100px;
+  border-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+.Modulo_10:hover 
+{
+  background-image: url("../img/Modulo10/02.png");
+}
+
+.Actualizar
+{
+  background-image: url("../img/Actualizar/01.png");
+  margin-top: 40px;
+  margin-left: 90px;
+  border-color: transparent;
+  width: 60%;
+  height: 60px;
+}
+
+.Actualizar:hover 
+{
+  background-image: url("../img/Actualizar/02.png");
+}
+
+.Cancelar 
+{
+  background-image: url("../img/Cancelar/01.png");
+  margin-top: 20px;
+  margin-left: 272px;
+  border-color: transparent;
+  width: 60%;
+  height: 60px;
+}
+
+.Cancelar:hover 
+{
+  background-image: url("../img/Cancelar/02.png");
+}
+
+.Enviar_Respuestas 
+{
+  background-image: url("../img/EnviarRespuestas/02.png");
+  margin-top: 20px;
+  margin-left: 272px;
+  border-color: transparent;
+  width: 150px;
+  height: 50px;
+}
+
+.Enviar_Respuestas:hover 
+{
+  background-image: url("../img/EnviarRespuestas/01.png");
+}
+
+.textAdelante
+{
+  -webkit-text-stroke: 1px black; 
+  font-weight: 900;
+  margin-top: -14px;
+  margin-left: 40px;
+  display: inline-block;
+  font-size: 20px;
+
+}
+
+.textAtras
+{
+  -webkit-text-stroke: 1px black; 
+  font-weight: 900;
+  margin-top: -20px;
+  margin-left: -49px;
+  display: inline-block;
+  font-size: 25px;
+
+
+}
+
+
+
+
+@media screen and (max-width: 993px) {
+  
+  .Home
+  {
+    position: absolute;
+    width: 40%;
+    left: -30px;
+    top: -45px;
+    height: 40px;
+
+  }
+
+  .Atras
+  {
+    position: absolute;
+    width: 100%;
+    left: -60px;
+    top: -47px;
+    height: 40px;
+
+  }
+
+  .Adelante
+  {
+    position: absolute;
+    width: 100%;
+    left: -40px;
+    top: -45px;
+    height: 40px;
+
+  }
+
+  .CotinuarAprendizaje
+  {
+    position: absolute;
+    width: 100%;
+    left: -20px;
+    top: -50px;
+    height: 40px;
+
+  }
+
+  .Video
+  {
+    position: absolute;
+    width: 200px;
+    left: 10px;
+    top: -28px;
+    height: 30px;
+
+  }
+
+  .Actividad
+  {
+    position: absolute;
+    width: 200px;
+    left: -50px;
+    top: -30px;
+    height: 30px;
+
+  }
+
+  .textAdelante
+{
+  -webkit-text-stroke: 1px black; 
+  font-weight: 900;
+  margin-top: -12px;
+  margin-left: 30px;
+  display: inline-block;
+
+}
+
+.DescargarEvidencia
+  {
+    position: absolute;
+    width: 150px;
+    left: -10px;
+    top: -30px;
+    height: 40px;
+
+  }
+
+  .Enviar_Respuestas
+  {
+    position: relative;
+    width: 150px;
+    left: -20px;
+    top: -10px;
+    height: 40px;
+
+  }
+
+  .Ejercicio
+  {
+    position: relative;
+    width: 150px;
+    left: -50px;
+    top: -10px;
+    height: 40px;
+
+  }
+
+  .Evaluar
+  {
+    width: 150px;
+    height: 30px;
+
+  }
+}
+
+@media screen and (max-width: 780px) {
+  
+  .Home
+  {
+    position: absolute;
+    width: 10%;
+    left: 2px;
+    top: -35px;
+    height: 30px;
+
+  }
+
+  .Atras
+  {
+    position: absolute;
+    width: 100px;
+    left: 40px;
+    top: -48px;
+    height: 30px;
+
+  }
+
+  .Adelante
+  {
+    position: absolute;
+    width: 100px;
+    left: 150px;
+    top: -60px;
+    height: 30px;
+
+  }
+
+  .CotinuarAprendizaje
+  {
+    position: absolute;
+    width: 100px;
+    left: 250px;
+    top: -68px;
+    height: 30px;
+
+  }
+
+  .Video
+  {
+    position: absolute;
+    width: 200px;
+    left: -40px;
+    top: -25px;
+    height: 30px;
+
+  }
+
+  .Ejercicio
+  {
+    position: absolute;
+    width: 200px;
+    left: 40px;
+    top: -5px;
+    height: 30px;
+
+  }
+
+  .Actividad
+  {
+    position: absolute;
+    width: 200px;
+    left: 130px;
+    top: -73px;
+    height: 30px;
+
+  }
+  .DescargarEvidencia
+  {
+    position: absolute;
+    width: 200px;
+    left: -20px;
+    top: -70px;
+    height: 50px;
+
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  
+  .Home
+  {
+    position: absolute;
+    width: 10%;
+    left: -5px;
+    top: -35px;
+    height: 30px;
+
+  }
+
+  .Atras
+  {
+    position: absolute;
+    width: 100px;
+    left: 30px;
+    top: -48px;
+    height: 30px;
+
+  }
+
+  .Adelante
+  {
+    position: absolute;
+    width: 100px;
+    left: 125px;
+    top: -59px;
+    height: 30px;
+
+  }
+
+  .CotinuarAprendizaje
+  {
+    position: absolute;
+    width: 100px;
+    left: 215px;
+    top: -70px;
+    height: 30px;
+
+  }
+
+  .Video
+  {
+    position: absolute;
+    width: 150px;
+    left: 10px;
+    top: -27px;
+    height: 30px;
+
+  }
+
+  .Ejercicio
+  {
+    position: absolute;
+    width: 150px;
+    left: 70px;
+    top: -7px;
+    height: 30px;
+
+  }
+
+  .Actividad
+  {
+    position: absolute;
+    width: 150px;
+    left: 150px;
+    top: -73px;
+    height: 30px;
+
+  }
+  .DescargarEvidencia
+  {
+    position: absolute;
+    width: 150px;
+    left: -20px;
+    top: -70px;
+    height: 50px;
+
+  }
+
+  .Evaluar
+  {
+    position: absolute;
+    width: 100px;
+    left: 0px;
+    top: -55px;
+    height: 30px;
+
+  }
+}

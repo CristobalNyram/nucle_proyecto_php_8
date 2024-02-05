@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Training Midas</title>
+    <!-- Primary Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="es" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="Distribution" content="global" />
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="robots" content="index,follow,all">
+    <!-- Primary Meta Tags -->
+    <link rel="stylesheet" href="../sass/estilos.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header data-scroll-header>
+        <nav class="nav-bar" id="navbar">
+            <button id="btn-menu" class="btn-menu">
+                <div class="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="logotipo">
+                <a href="../">
+                    <img class="img-fluid fit" loading="lazy" src="../img/logo.png" alt="midas">
+                </a>
+            </div>
+            <ul class="nav" id="menu">
+                <li id="home"><a onclick="javascript:localStorage.setItem('activeMenu','home')"     href="../">INICIO</a></li>
+                <li id="videos"><a onclick="javascript:localStorage.setItem('activeMenu','videos')" href="../videos.html">Videos</a></li>
+                <li id="plain"><a onclick="javascript:localStorage.setItem('activeMenu','plain')"   href="../plain.html">PLAN INTEGRAL DE DESARROLLO HUMANO</a></li>
+                <li id="login"><a onclick="javascript:localStorage.setItem('activeMenu','login')"   href="../login.html">INGRESAR</a></li>
+                <li id="sve"><a onclick="javascript:localStorage.setItem('activeMenu','sve')"       href="../sve.html">SVE</a></li>
+            </ul>
+            <div class="mode center">
+                <button class="switch" id="switch">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+       <div class="banner">
+            <div class="banner-content">
+                <div class="list">
+                    <div class="title">
+                        <h3><i class="fas fa-eye"></i>Modulo 1:</h3>
+                        <span>INTRODUCCIÓN AL PROGRAMA ANTIZOMBIE</span>
+                    </div>
+                    <div class="content">
+                        <b>UNIDAD 1: INTRODUCCIÓN AL CLIENTE</b>
+                        <ul >
+                            <li>
+                            </li>
+                            <li>
+                                <b>EJERCICIO 1:</b> DIAGNOSTICO PARA CONOCER <br> ¿QUÉ TAN MUERTO VIVIENTE ERES?
+                            </li>
+                            <li>
+                                <b>EJERCICIO 2:</b> FODA
+                            </li>
+                            <li>
+                                <b>EJERCICIO 2:</b> ESFERAS
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="title">
+                        <h3><i class="fas fa-eye-slash"></i>Modulo 2:</h3>
+                        <span>CONECTANDO CON LOS SENTIMIENTOS</span>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="title">
+                        <h3><i class="fas fa-eye-slash"></i>Modulo 3:</h3>
+                    </div>
+                </div>
+            </div>
+            <img class="banner-image" src="../img/plain.jpg" alt="" srcset="">
+            <img class="shadow" src="../img/shadow.svg" alt="" srcset="">
+       </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        window.localStorage.removeItem("activeMenu");
+        window.localStorage.setItem("activeMenu", "plain");
+        activeMenu();
+    };
+</script>
+<script src="/js/plugins/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/darkMode.js"></script>
+<script src="https://kit.fontawesome.com/f8e9d1f17f.js" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,58 @@
+.menuApp {
+    user-select: none;
+    .module{
+        display: block;
+        padding: 0.5rem 0;
+        .title{
+            margin-bottom: 5px;
+            display: block;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: underline;
+
+            i{
+                margin-right:5px;
+            }
+        }
+        .unit {
+            display: block;
+            padding-left: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: 8px;
+            display: none;
+            .title{
+                display: block;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .activity{
+                padding: 0;
+                margin: 0;
+                margin-left: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                display: none;
+                font-size: 14px;
+                li{
+                    padding: 0.35rem 0;
+                    a{
+                        color: #535353;
+                        text-decoration: none!important;
+                        text-decoration-color:$white!important;
+                        &:hover{
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+            .active_activity{
+                display: block;
+            }
+        }
+        .active_unit{
+            display: block;
+            // border-left: 1px solid $black;
+        }
+    }
+}

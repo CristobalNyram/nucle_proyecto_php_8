@@ -1,0 +1,126 @@
+.banner{
+    position: relative;
+    width: 80%;
+    min-height: 640px;
+    height: 100%;
+    padding: 2rem;
+    margin-bottom: 250px;
+    color: $white;
+    margin: auto;
+    .banner-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+    }
+    .banner-content{
+        position: relative;
+        z-index: 2;
+        h1{
+            color: $white;
+            font-size: 62px;
+            font-weight: 800;
+        }
+        h2{
+            color: $white;
+            font-size: 42px;
+            font-weight: 600;
+        }
+        p{
+            color: $white;
+            &::after{
+                content: '';
+            }
+        }
+        button{
+            color: $white;
+            border: $white 1px solid;
+            font-size: 20px;
+            padding: 1rem 2rem;
+            margin: 1.5rem 1rem;
+            border-radius: 8px;
+        }
+        .list{
+            line-height: 2;
+            .title{
+                i{
+                    padding-right: 4px;
+                }
+                span{
+                    padding-left: 28px;
+                }
+            }
+            .content{
+                padding-left: 36px;
+            }
+        }
+    }
+    .shadow{
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        bottom: -35%;
+        right: -6%;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 720px) {
+    .banner{
+        width: 100%;
+        min-height: calc(100vh - 80px);
+        height: 100%;
+        position: relative;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        .banner-content{
+            h1{
+                color: $white;
+                font-size: 42px;
+                font-weight: 600;
+            }
+            h2{
+                color: $white;
+                font-size: 32px;
+                font-weight: 400;
+            }
+            p{
+                color: $white;
+                &::after{
+                    padding-left: 1rem;
+                    content: '  ---->';
+                }
+            }
+            button{
+                color: $white;
+                border: $white 1px solid;
+                font-size: 18px;
+                padding: 0.75rem 1.5rem;
+                margin: 2rem 0;
+                border-radius: 8px;
+            }
+            color: $white;
+            padding-left: 0rem;
+            .list{
+                line-height: 2;
+                .title{
+                    i{
+                        padding-right: 4px;
+                    }
+                    span{
+                        padding-left: 28px;
+                    }
+                }
+                .content{
+                    padding-left: 36px;
+                }
+            }
+        }
+        .shadow{
+            display: none;
+        }
+    }
+}
