@@ -49,13 +49,13 @@ function respuestaIniciarSesion(respuesta)
             window.location.href = './';
             break;
         case "a":
-            window.location.href = 'users/';
+            window.location.href = 'user/client/';
             break;
         case "p":   	 
-            window.location.href = 'prof/';
+            window.location.href = 'user/agente/';
             break;
         case "m":   	 
-            window.location.href = 'administracion/';
+            window.location.href = 'user/admin/';
             break;
     }
 }
