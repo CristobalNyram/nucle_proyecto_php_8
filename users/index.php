@@ -62,6 +62,7 @@ else
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/user-interface.css"> 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/preloader.css"> 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/timeline.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/modal.css"> 
 
     <?php 
     // header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1 
@@ -97,6 +98,8 @@ else
     $mA1 = true;
 
     include($__DIR_BASE__LOCAL."includes/layouts/preloader.php");
+    include($__DIR_BASE__LOCAL."includes/general/tabla-comentarios-modal-js.php");
+
 
     
     ?>
@@ -357,6 +360,20 @@ $( ".btnUnidadActividad" ).click(function() {
         case 2:
             fnViewRastreoLibro();
             break;
+        case "3":
+        case 3:
+            fnViewManuscritoCliente();
+            break;
+
+        case "4":
+        case 4:
+            fnViewPropuestaPortadaCliente();
+            break;
+        case "5":
+        case 5:
+            fnViewTextoFinalCliente();
+            break;
+            
     
         default:
             break;
@@ -512,7 +529,7 @@ function fnViewTranscripcionCliente() {
             
     <div class="row">
         <div class="cell-lg-12 d-flex-justify-center-rows">
-        <button class="btn-comentarios" title="Comentario" 
+        <button class="btn-comentarios trigger-btn-modal" title="Comentario" 
         style="
             margin: .5rem 1rem;
         ">
@@ -543,6 +560,189 @@ function fnViewTranscripcionCliente() {
             </button>
         </div>
     </div>
+</form>
+`;
+
+    $("#banner-content").html("");
+    $("#banner-content").append(htmlInfo);
+    
+}
+function fnViewManuscritoCliente() {
+    var htmlInfo = `
+    <form id="formEvaluacionModulo" class="custom-validation need-validation" autocomplete="off" novalidate="" action="javascript:void(0);">
+
+    <div class="row fg-text-actividad active-blanco">
+        <div class="cell-lg-12">
+            <div style="text-align: left; font-size: 28px;" class="row mb-3 ">
+                <div class="cell-md-1"> </div>
+                <div class="cell-md-10">
+                    <label><center>Manuscrito</center></label>
+                </div>
+                <div class="cell-md-1"></div>
+            </div>
+
+        
+
+        </div>
+    </div>
+
+    <!-- Espacio en blanco -->
+    <div class="row" >
+        <div class="cell-lg-12">
+        <textarea id="editor-transcripcion"></textarea>
+
+        </div>
+      
+    </div>
+
+    <!-- Botón Guardar -->
+
+ 
+            
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-center-rows">
+        <button class="btn-comentarios trigger-btn-modal" title="Comentario" 
+        style="
+            margin: .5rem 1rem;
+        ">
+                    <span>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+
+                    </span>
+            </button>
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-between-rows">
+          
+            <button  class="btn-save btn-save-custom btn-cancelar-custom" >
+                <span  >
+                Cancelar
+                <span><i class="fa fa-times"></i>
+                </span>
+            </button>
+
+            <button  class="btn-save btn-save-custom btn-guardar-custom" >
+                <span  >
+                Guardar
+                <span><i class="fa fa-save"></i>
+            </span>
+                
+            </button>
+        </div>
+    </div>
+</form>
+`;
+
+    $("#banner-content").html("");
+    $("#banner-content").append(htmlInfo);
+    
+}
+
+function fnViewPropuestaPortadaCliente() {
+    var htmlInfo = `
+    <form id="formEvaluacionModulo" class="custom-validation need-validation" autocomplete="off" novalidate="" action="javascript:void(0);">
+
+    <div class="row fg-text-actividad active-blanco">
+        <div class="cell-lg-12">
+            <div style="text-align: left; font-size: 28px;" class="row mb-3 ">
+                <div class="cell-md-1"> </div>
+                <div class="cell-md-10">
+                    <label><center>Propuesta de portada</center></label>
+                </div>
+                <div class="cell-md-1"></div>
+            </div>
+
+        
+
+        </div>
+    </div>
+
+    <!-- Espacio en blanco -->
+    <div class="row" >
+        <div class="cell-lg-12">
+        <iframe 
+        src="https://plataforma.fedpatmex.integrameetings.com/public/docs/documentfreeworkfinal/cfa64a6b6e_1697041724.jpg" width="100%" height="600" frameborder="0" scrolling="auto"></iframe>
+
+        </div>
+      
+    </div>
+
+    <!-- Botón Guardar -->
+
+ 
+            
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-center-rows">
+        <button class="btn-comentarios trigger" title="Comentario" 
+        style="
+            margin: .5rem 1rem;
+        ">
+                    <span>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+
+                    </span>
+            </button>
+           
+        </div>
+    </div>
+
+</form>
+`;
+
+    $("#banner-content").html("");
+    $("#banner-content").append(htmlInfo);
+    
+}
+
+function fnViewTextoFinalCliente() {
+    var htmlInfo = `
+    <form id="formEvaluacionModulo" class="custom-validation need-validation" autocomplete="off" novalidate="" action="javascript:void(0);">
+
+    <div class="row fg-text-actividad active-blanco">
+        <div class="cell-lg-12">
+            <div style="text-align: left; font-size: 28px;" class="row mb-3 ">
+                <div class="cell-md-1"> </div>
+                <div class="cell-md-10">
+                    <label><center>Texto final</center></label>
+                </div>
+                <div class="cell-md-1"></div>
+            </div>
+
+        
+
+        </div>
+    </div>
+
+    <!-- Espacio en blanco -->
+    <div class="row" >
+        <div class="cell-lg-12">
+        <iframe src="https://plataforma.fedpatmex.integrameetings.com/public/docs/documentfreework/c9d4ef1815_AN%C3%81LISISINTEGRALDEUNGLIOMADEALTOGRADOIDH2MUTADOMEDIANTEELUSODEPRUEBASMOLECULARES_DaneryValdezOcrospoma.pdf" width="100%" height="600" frameborder="0" scrolling="auto"></iframe>
+
+        </div>
+      
+    </div>
+
+    <!-- Botón Guardar -->
+
+ 
+            
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-center-rows">
+        <button class="btn-comentarios trigger-btn-modal" title="Comentario" 
+        style="
+            margin: .5rem 1rem;
+        ">
+                    <span>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+
+                    </span>
+            </button>
+           
+        </div>
+    </div>
+
 </form>
 `;
 
@@ -630,6 +830,15 @@ $(document).on('focusin', function(e) {
   if ($(e.target).closest(".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
     e.stopImmediatePropagation();
   }
+});
+
+$( document ).ready(function() {
+    $(document).on("click", ".trigger-btn-modal", function(event) {
+        console.log("hola");
+        $('.modal-wrapper').toggleClass('open');
+        $('.page-wrapper').toggleClass('blur-it');
+     return false;
+  });
 });
 //  #####################################################################################################################################################
 //  ###################     FIN      ####################################################################################################################

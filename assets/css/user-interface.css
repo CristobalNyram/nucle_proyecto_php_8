@@ -11,6 +11,7 @@
 body.dark .app .nav-bar-app {
     background: black;
     color: #f9f9f9;
+    z-index: 10;
 }
 .section-header{
    border-bottom: 1rem;
@@ -75,15 +76,6 @@ body.dark .app .nav-bar-app {
     justify-content:center;
     align-items: center;
 }
-
-
-
-  
-
-
-
-  
-
   /* botones  inicio*/
   .btn-save-custom {
     width: 100%;
