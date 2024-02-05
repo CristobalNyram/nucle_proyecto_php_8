@@ -61,6 +61,7 @@ else
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/modificado.css"> 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/user-interface.css"> 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/preloader.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/timeline.css"> 
 
     <?php 
     // header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1 
@@ -147,7 +148,7 @@ else
                                     
 
                                     echo '<li class="d-flex flex-align-center flex-justify-between btnUnidadActividad" '.
-                                    '    origen="M"  onclick="fnViewTranscripcionCliente()" data-unidad = "'.$idUnidad.'" actividad = "'.$idActividad.'" type = "'.$formato.'" '.
+                                    '    origen="M"  onclick="" data-unidad = "'.$idUnidad.'" actividad = "'.$idActividad.'" type = "'.$formato.'" '.
                                     '    imagen = "'.$imagen.'" url = "'.$url.'" name = "'.$nombre.'" > '.
                                     '    <a class="title">  '.
                                     '        <img class="pdf" src="'.BASE_URL.'/assets/img/icon/'.$icono.'" alt=""  '.
@@ -328,6 +329,8 @@ $( ".btnUnidadActividad" ).click(function() {
     var url           =   $(this).attr("url");
     var name          =   $(this).attr("name");
 
+    console.log(idUnidad,idActividad,type);
+
     // alert(name+' '+origen+' '+idUnidad+'   '+idActividad+'   '+type);
     if (type == 'ACTIVIDAD')
     {
@@ -343,6 +346,20 @@ $( ".btnUnidadActividad" ).click(function() {
     else // items de menu con contenido
     {
        // mostrarContenidoMenu(name, url, imagen); 
+    }
+
+    switch (idActividad) {
+        case "1":
+        case 1:
+            fnViewTranscripcionCliente();
+            break;
+        case "2":
+        case 2:
+            fnViewRastreoLibro();
+            break;
+    
+        default:
+            break;
     }
     cerrarMenu();
 });
@@ -532,6 +549,54 @@ function fnViewTranscripcionCliente() {
     $("#banner-content").html("");
     $("#banner-content").append(htmlInfo);
     
+}
+
+function fnViewRastreoLibro(){
+    var htmlInfo = `
+    <section id="timeline">
+      <article>
+        <div class="inner">
+          <span class="date">
+        <!--     <span class="day">30<sup>th</sup></span> -->
+            <span class="month">Nov</span>
+            <span class="year">2022</span>
+          </span>
+
+
+          <h6>PASO 1</h6>
+
+            <p class="wrapper">
+
+                <a href="https://constancias.integrameetings.com/fedpatmex-2022/" class="flat-btn"> 1</a>
+
+            </p>
+
+
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <!--     <span class="day">30<sup>th</sup></span> -->
+            <span class="month">Nov</span>
+            <span class="year">2023</span>
+          </span>
+          <h6>PASO 2</h6>
+
+          <p class="wrapper">
+
+            <a href="https://constancias.integrameetings.com/fedpatmex-2023/" class="flat-btn">2</a>
+
+          </p>
+        </div>
+      </article>
+
+    </section>
+        `;
+
+    $("#banner-content").html("");
+    $("#banner-content").append(htmlInfo);
+
 }
 
 
