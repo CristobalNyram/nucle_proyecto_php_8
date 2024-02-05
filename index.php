@@ -80,6 +80,15 @@ require_once($__DIR_BASE__LOCAL."./config/env.php");
           max-height: 400px; /* Puedes ajustar este valor según tus necesidades */
       }
   }
+  .banner-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+ }
+ .banner-content button{
+  max-width: 15rem;
+ }
 </style>
 
 
@@ -123,7 +132,7 @@ require_once($__DIR_BASE__LOCAL."./config/env.php");
                 <!-- <img class="img-logo-academy" src="img/logos/academy_training_black.png" alt="" srcset=""> -->
                  
 
-                <h1 id="titulo-udg" class="bordered-text"> PROGRAMA <br> ANTI ZOMBIE</h1>
+                <h1 id="titulo-udg" class="bordered-text"> EPICK BOOK</h1>
                 <p hidden>Para docentes y estudiantes</p>
                 
                 <button onclick="window.location.href = BASE_URL+'/login.php'" style="background-color: black;"> ACCEDER</button>

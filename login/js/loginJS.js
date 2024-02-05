@@ -28,7 +28,7 @@ function respuestaIniciarSesion(respuesta)
                // icon: 'error',
                 title: 'DATOS INCORRECTOS',
                 text: 'Los datos no coinciden con ninguna cuenta',
-                imageUrl: './img/Alerts/error/icono.png', // Ruta a la imagen que deseas mostrar
+                imageUrl: BASE_URL+'/assets/img/Alerts/error/icono.png', // Ruta a la imagen que deseas mostrar
                 imageWidth: 170, // Ancho de la imagen en píxeles
                 imageHeight: 150, // Alto de la imagen en píxeles
                 imageAlt: 'Error', // Texto alternativo de la imagen (opcional)

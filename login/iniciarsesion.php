@@ -12,8 +12,8 @@
     $password 	=   $_POST['passworddat'];
     $respuesta 	=   "a";
 
-    include("../tools/conexiondb.php");
-    include("../tools/encriptar.php");
+    include("../app/tools/conexiondb.php");
+    include("../app/tools/encriptar.php");
 
     if (isset($conexion))
     {

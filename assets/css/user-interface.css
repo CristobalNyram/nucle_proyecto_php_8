@@ -1,0 +1,201 @@
+.app .section-header {
+    background: black!important;
+    padding: 0.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2) !important;
+    -webkit-box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2) !important;
+    -moz-box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2) !important;
+}
+body.dark .app .nav-bar-app {
+    background: black;
+    color: #f9f9f9;
+}
+.section-header{
+   border-bottom: 1rem;
+}
+
+
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 9999;
+    text-align: center;
+}
+#loading-screen #loading-screen-titulo{
+    color: #00AFE8;
+    font-weight: bold;
+}  
+#loading-screen #puntos-loading{
+    color: #00AFE8;
+    font-weight: bold;
+}  
+  @keyframes loading {
+      0%, 25% {
+          content: ".";
+      }
+      50% {
+          content: "..";
+      }
+      75% {
+          content: "...";
+      }
+      100% {
+          content: "";
+      }
+  }
+  
+  #puntos-loading::after {
+      content: "";
+      animation: loading 1.5s steps(4) infinite;
+  }
+  .app .section-header .logotipo img {
+      width: 260px;
+      height: 70px;
+  
+  }
+
+
+.d-flex-justify-between-rows {
+    display: flex;
+    justify-content: space-between;
+}
+.d-flex-justify-center-rows {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+
+  
+
+
+
+  
+
+  /* botones  inicio*/
+  .btn-save-custom {
+    width: 100%;
+    font-size: 18px;
+    background: #2cabe2;
+    font-size: 1rem;
+    font-weight: bold;
+    transform: perspective(1px) skewX(-20deg); /* Ajusta el ángulo según tus necesidades */
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    border: none; /* Elimina el borde del botón si es necesario */
+}
+
+.btn-save-custom span {
+    display: inline-block;
+    transform: skewX(20deg); /* Ajusta el ángulo según tus necesidades */
+    position: relative;
+    z-index: 1;
+    /* padding-left: 20px; */
+}
+
+.btn-save-custom i {
+    position: absolute;
+    left: 5px;
+    transform: translate(0, -50%) skewX(-20deg);
+    z-index: 0;
+    top: -7px;
+}
+.btn-guardar-custom{
+  border: 3px solid #2cabe2;
+  background-color: #000000;
+}
+.btn-cancelar-custom{
+    border: 3px solid red;
+    background-color: #000000;
+  }
+  /* Cambio de color del borde al hacer hover sobre el botón "Aceptar" */
+.btn-guardar-custom:hover {
+    background-color: #2cabe2c8; 
+    border: 5px solid #000000;
+
+}
+.btn-cancelar-custom:hover {
+    background-color: rgba(255, 0, 0, 0.679); 
+    border: 5px solid #000000;
+
+}
+
+
+.btn-comentarios span {
+    background: black;
+    border-radius: 100%;
+    padding: 1rem 1.2rem;
+    border: 3px solid #2cabe2;
+
+}
+
+  /* botones  fin*/
+
+  @media (max-width: 1024px) {
+      /* Estilos para tabletas */
+      .app .section-header .logotipo img {
+          width: 200px;
+          height: 50px;
+      }
+  
+      /* Otros estilos específicos para tabletas */
+  }
+  @media (max-width: 768px) {
+      /* Estilos para dispositivos móviles */
+      .app .section-header .logotipo img {
+          width: 160px;
+          height: 40px;
+      }
+      .d-flex-justify-between-rows {
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-items: center;
+        padding: 1rem;
+    
+    }
+    .banner .banner-content button.btn-save-custom {
+        margin: 1rem 0!important;
+     
+    }
+    .btn-comentarios {
+   
+    position: absolute;
+    top: -30%;
+    z-index: 10;
+    left: 75%;
+    
+}
+  
+      /* Otros estilos específicos para dispositivos móviles */
+  }
+  @media (max-width: 468px) {
+      /* Estilos para dispositivos móviles */
+      .app .section-header .logotipo img {
+          display:none;
+      }
+  
+      /* Otros estilos específicos para dispositivos móviles */
+  }
+
+  body.dark {
+    background: #374955!important;
+    background-image: url("./../img/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

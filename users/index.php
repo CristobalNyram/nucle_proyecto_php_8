@@ -59,84 +59,26 @@ else
     <script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/sweetalert2@11.js"></script>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/alertas.css"> 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/modificado.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/user-interface.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/preloader.css"> 
 
     <?php 
     // header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1 
     // header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado 
     ?>
 </head>    
-<style>
-    #loading-screen {
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color:white;
-  width: 100%;
-  height: 100%;
-  background-color: #252525;
-  z-index: 9999;
-  text-align: center;
-}
-@keyframes loading {
-    0%, 25% {
-        content: ".";
-    }
-    50% {
-        content: "..";
-    }
-    75% {
-        content: "...";
-    }
-    100% {
-        content: "";
-    }
-}
-
-#puntos-loading::after {
-    content: "";
-    animation: loading 1.5s steps(4) infinite;
-}
-.app .section-header .logotipo img {
-    width: 260px;
-    height: 70px;
-
-}
-@media (max-width: 1024px) {
-    /* Estilos para tabletas */
-    .app .section-header .logotipo img {
-        width: 200px;
-        height: 50px;
-    }
-
-    /* Otros estilos específicos para tabletas */
-}
-@media (max-width: 768px) {
-    /* Estilos para dispositivos móviles */
-    .app .section-header .logotipo img {
-        width: 160px;
-        height: 40px;
-    }
-
-    /* Otros estilos específicos para dispositivos móviles */
-}
-@media (max-width: 468px) {
-    /* Estilos para dispositivos móviles */
-    .app .section-header .logotipo img {
-        display:none;
-    }
-
-    /* Otros estilos específicos para dispositivos móviles */
-}
-</style>
 <script>
   window.addEventListener('load', () => {
     //const loadingScreen = document.getElementById('loading-screen');
     //loadingScreen.style.display = 'none';
-    $("#loading-screen").slideUp("slow");
+
+    setTimeout(function() {
+        $("#loading-screen").slideUp("slow", function() {
+    // Muestra el elemento con el ID #app con una animación "slow" después de ocultar #loading-screen
+          $(".main-content-app").slideDown("slow");
+         });
+    }, 500); 
+   
  });
 
 </script>
@@ -152,20 +94,17 @@ else
     include($__DIR_BASE__LOCAL."app/tools/actions.php");
     
     $mA1 = true;
+
+    include($__DIR_BASE__LOCAL."includes/layouts/preloader.php");
+
     
     ?>
-  <div id="loading-screen">
-    <!-- Contenido que se mostrará mientras carga la página -->
-    
-    <h1>Cargando el contenido </h1>
-    <h1 id="puntos-loading">.</h1>
-  </div>
 
-    <div class="app">
+    <div class="main-content-app app" style="display: none;">
         <header>
             <nav class="nav-bar-app" id="nav-bar-app">
                 <div  class="pleca">
-                    <h3 style="-webkit-text-stroke: 1px black; font-weight: 900;">Contenido del curso</h3>
+                    <h3 style="-webkit-text-stroke: 1px black; font-weight: 900;">Panel de control</h3>
                 </div>
                 <ul class="menuApp">   
                     
@@ -174,12 +113,12 @@ else
                         <?php
                         if($mA1 == true)  {
                         ?>  <p class="title" onclick="activeModule('module1');"> 
-                            <i class="fas fa-eye"></i> 
-                            NUEVO  <?php
+                            <i class="fas fa-book"></i> 
+                            LIBRO  <?php
                         }   else    {   
                         ?>  <p class="fg-gray title" title="Módulo bloqueado"> 
                             <i class="fas fa-lock"></i> 
-                            NUEVO<?php  
+                            LIBRO<?php  
                         }
                         ?>
                         <i id="iconmodule1" class="fa fa-long-arrow-right"></i>
@@ -187,10 +126,12 @@ else
                         <ul class="unit" id="module1">
 
                         <?php
-                            $resultModS =   $conexion->query(" SELECT id_menu, nombre, formato, imagen, contenido_url "
+                            $resultModS =   $conexion->query(" SELECT id_menu, nombre, formato, imagen, contenido_url,icono "
                                                             ." FROM menu_actividades "
                                                             ." WHERE estatus = '1'  "
                                                             ." ORDER BY id_menu ASC ");
+
+                                                            
                             if( $resultModS->num_rows )
                             {
                                 while ($datosMod   =   $resultModS->fetch_assoc() )
@@ -199,18 +140,21 @@ else
                                     $nombre        =   $datosMod["nombre"];
                                     $formato       =   $datosMod["formato"];
                                     $idUnidad      =   0;
-                                    $icono         =   'PDF.png';// getImgen($formato);
+                                    $icono = (isset($datosMod["icono"]) && trim($datosMod["icono"]) !== '') ? trim($datosMod["icono"]) : 'PDF.png';
                                     $imagen        =   $datosMod["imagen"];
                                     $url           =   $datosMod["contenido_url"];
 
-                                    echo '<li class="d-flex flex-align-center flex-justify-between btnUnidadActividad" ';
-                                    echo '    origen="M" data-unidad = "'.$idUnidad.'" actividad = "'.$idActividad.'" type = "'.$formato.'" ';
-                                    echo '    imagen = "'.$imagen.'" url = "'.$url.'" name = "'.$nombre.'" > ';
-                                    echo '    <a class="title">  ';
-                                    echo '        <img class="pdf" src="'.BASE_URL.'/assets/img/icon/'.$icono.'" alt=""  ';
-                                    echo '        style="width: 18px; margin-right: 8px; margin-bottom: 4px;"/>'.$nombre;
-                                    echo '    </a> ';
-                                    echo '</li> ';
+                                    
+
+                                    echo '<li class="d-flex flex-align-center flex-justify-between btnUnidadActividad" '.
+                                    '    origen="M"  onclick="fnViewTranscripcionCliente()" data-unidad = "'.$idUnidad.'" actividad = "'.$idActividad.'" type = "'.$formato.'" '.
+                                    '    imagen = "'.$imagen.'" url = "'.$url.'" name = "'.$nombre.'" > '.
+                                    '    <a class="title">  '.
+                                    '        <img class="pdf" src="'.BASE_URL.'/assets/img/icon/'.$icono.'" alt=""  '.
+                                    '        style="width: 18px; margin-right: 8px; margin-bottom: 4px;"/>'.$nombre.
+                                    '    </a> '.
+                                    '</li> ';
+                               
                                 }
                             }
                             ?>
@@ -253,15 +197,7 @@ else
                                 </button>
                             </div>
                             <hr>
-                            <button class="btn-logout btn-result-activities" onclick="btnResultadosActividades()">
-                                Resultados de actividades
-                            </button>
-                            <br/> <br/> 
-                            
-                            <!-- <button class="btn-logout btn-update-password" onclick="updateContrasenia()">
-                                Administrar tu cuenta
-                            </button> -->
-                           <!--  <br/> <br/>  -->
+              
 
                             <button class="btn-logout btn-close-session" onclick="cerrarSesion()">
                                 Cerrar sesión
@@ -334,7 +270,8 @@ else
 <script src="<?php echo BASE_URL; ?>/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/jquery.blockUI.js">  </script> 
 <script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/question_fornat.js"></script>
- 
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 
 <script>
 var imagenPrincipal =   '../content/curso_1/imgActividades/inicio_curso.png';
@@ -396,16 +333,16 @@ $( ".btnUnidadActividad" ).click(function() {
     {
         var tipoActividad   =   $(this).attr("tipoActividad");
         $("#txtHtipoItem").val(tipoActividad); 
-        mostrarContenidoMenuActividad(idActividad, tipoActividad, imagen); 
+       // mostrarContenidoMenuActividad(idActividad, tipoActividad, imagen); 
     }
     else if (type == 'EVALUACION')
     { 
         var idModulo =   $(this).attr("idModulo");
-        mostrarContenidoMenuEvalucion(idModulo);
+       // mostrarContenidoMenuEvalucion(idModulo);
     }
     else // items de menu con contenido
     {
-        mostrarContenidoMenu(name, url, imagen); 
+       // mostrarContenidoMenu(name, url, imagen); 
     }
     cerrarMenu();
 });
@@ -517,6 +454,123 @@ function respuestaSalir(arg)
 
     setTimeout("location.href='../'", 2);
 }
+
+//  #####################################################################################################################################################
+//  ###################     INICIO      ####################################################################################################################
+//  #####################################################################################################################################################
+function getHtmlBotonesHistorico(){
+
+}
+function fnViewTranscripcionCliente() {
+    var htmlInfo = `
+    <form id="formEvaluacionModulo" class="custom-validation need-validation" autocomplete="off" novalidate="" action="javascript:void(0);">
+
+    <div class="row fg-text-actividad active-blanco">
+        <div class="cell-lg-12">
+            <div style="text-align: left; font-size: 28px;" class="row mb-3 ">
+                <div class="cell-md-1"> </div>
+                <div class="cell-md-10">
+                    <label><center>Transcripcion</center></label>
+                </div>
+                <div class="cell-md-1"></div>
+            </div>
+
+        
+
+        </div>
+    </div>
+
+    <!-- Espacio en blanco -->
+    <div class="row" >
+        <div class="cell-lg-12">
+        <textarea id="editor-transcripcion"></textarea>
+
+        </div>
+      
+    </div>
+
+    <!-- Botón Guardar -->
+
+ 
+            
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-center-rows">
+        <button class="btn-comentarios" title="Comentario" 
+        style="
+            margin: .5rem 1rem;
+        ">
+                    <span>
+                    <i class="fa fa-comment" aria-hidden="true"></i>
+
+                    </span>
+            </button>
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell-lg-12 d-flex-justify-between-rows">
+          
+            <button  class="btn-save btn-save-custom btn-cancelar-custom" >
+                <span  >
+                Cancelar
+                <span><i class="fa fa-times"></i>
+                </span>
+            </button>
+
+            <button  class="btn-save btn-save-custom btn-guardar-custom" >
+                <span  >
+                Guardar
+                <span><i class="fa fa-save"></i>
+            </span>
+                
+            </button>
+        </div>
+    </div>
+</form>
+`;
+
+    $("#banner-content").html("");
+    $("#banner-content").append(htmlInfo);
+    
+}
+
+
+function createQuestion(number, question, options) {
+  return `
+    <div class="form-group">
+      <label>${number}. ${question}</label>
+    </div>
+    <div class="form-group2">
+      ${options.map(option => `<br/><input type="radio" value="${option}" data-role="radio"> ${option}`).join('')}
+    </div><br/>
+  `
+}
+
+tinymce.init({
+        selector: '#editor-transcripcion',
+        height: 500,
+        menubar: false,
+        apiKey: 'mt3wtiqsapm6uhn41pwew5mb8ygukp6wsb66dkifamfh12s9', // Reemplaza con tu clave de API
+        plugins: [
+          'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+          'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+          'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist outdent indent | removeformat | help'
+      });
+
+$(document).on('focusin', function(e) {
+  if ($(e.target).closest(".tox-tinymce, .tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+    e.stopImmediatePropagation();
+  }
+});
+//  #####################################################################################################################################################
+//  ###################     FIN      ####################################################################################################################
+//  #####################################################################################################################################################
+
+
 
 
 //https://themes.org.ua/pandora/
