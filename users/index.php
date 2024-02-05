@@ -1,4 +1,10 @@
 <?php
+$__DIR_BASE__LOCAL = dirname(__FILE__)."./../";
+require_once($__DIR_BASE__LOCAL."config/env.php");
+//Auth::requireLogin();
+?>
+
+<?php
 if(!isset($_SESSION)) 
 { 
     error_reporting(E_ALL);
@@ -9,7 +15,7 @@ if(!isset($_SESSION))
 
 if (!isset($_SESSION['usuario'])) {
     // Redireccionar a la página de inicio de sesión
-    header("Location: sesion.php");
+    Redirection::to("users/sesion.php");
     die(); // Asegurarse de que el script termine después de enviar el encabezado de redirección
 }
 else
@@ -20,7 +26,9 @@ else
 <html lang="es">
 <head>
   
-    <title>Training Midas</title>
+    <title>Inicio |<?php echo PROYECTO_NOMBRE; ?></title>
+    <script src="<?php echo BASE_URL; ?>/config/env.js"></script>
+
     <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <meta charset="UTF-8">
@@ -33,24 +41,24 @@ else
     <meta name="copyright" content="">
     <meta name="robots" content="index,follow,all">
     <!-- Primary Meta Tags -->
-    <link rel="stylesheet" href="../sass/app_v1.css">
-    <link rel="shortcut icon" href="../img/logos/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/sass/app_v1.css">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/assets/img/logos/logo.png" type="image/x-icon">
         
     <!-- Metro 4 -->
-    <link rel="stylesheet" href="../vendors/metro4/css/metro-all.min.css">
-    <link rel="stylesheet" href="../css/botones_v5.css">
-    <link rel="stylesheet" href="../css/index_v5.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/vendors/metro4/css/metro-all.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/botones_v5.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/index_v5.css"> 
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/plugins/introjs/introjs.min.css"> 
-    <link rel="stylesheet" href="../css/plugins/introjs/modificado.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/plugins/introjs/introjs.min.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/plugins/introjs/modificado.css"> 
 
-    <link rel="stylesheet" href="../css/plugins/introjs/modificado.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/plugins/introjs/modificado.css"> 
 
     <!-- CSSS PARA SWEET ALERT -->
-    <script src="../js/plugins/sweetalert/sweetalert2@11.js"></script>
-    <link rel="stylesheet" href="../css/alertas.css"> 
-    <link rel="stylesheet" href="../css/modificado.css"> 
+    <script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/sweetalert2@11.js"></script>
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/alertas.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/modificado.css"> 
 
     <?php 
     // header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1 
@@ -140,8 +148,8 @@ else
     $id_curso       =   1;
     $usuario        =  'XXXX';
     
-    include("../tools/conexiondb.php");
-    include("../tools/actions.php");
+    include($__DIR_BASE__LOCAL."app/tools/conexiondb.php");
+    include($__DIR_BASE__LOCAL."app/tools/actions.php");
     
     $mA1 = true;
     
@@ -199,7 +207,7 @@ else
                                     echo '    origen="M" data-unidad = "'.$idUnidad.'" actividad = "'.$idActividad.'" type = "'.$formato.'" ';
                                     echo '    imagen = "'.$imagen.'" url = "'.$url.'" name = "'.$nombre.'" > ';
                                     echo '    <a class="title">  ';
-                                    echo '        <img class="pdf" src="../img/icon/'.$icono.'" alt=""  ';
+                                    echo '        <img class="pdf" src="'.BASE_URL.'/assets/img/icon/'.$icono.'" alt=""  ';
                                     echo '        style="width: 18px; margin-right: 8px; margin-bottom: 4px;"/>'.$nombre;
                                     echo '    </a> ';
                                     echo '</li> ';
@@ -224,7 +232,7 @@ else
                     <div class="logotipo logotipo-app">
                         <!--<a href="../">-->
                         <!-- <img class="" loading="lazy" src="../img/logos/academy_training_black.png" alt="midas"> -->    
-                        <img style ="width: 75px; height: 35px;" class="" loading="lazy" src="../img/logos/logo.png" alt="midas">
+                        <img style ="width: 75px; height: 35px;" class="" loading="lazy" src="<?php echo BASE_URL; ?>/assets/img/logos/logo.png" alt="midas">
                             
                         <!--</a>-->
                     </div>
@@ -274,7 +282,7 @@ else
                         
     <!--                <div id="divImagenMain">-->
                         <img id="mi_imagen" class="banner-image"
-                        src="../content/curso_1/imgActividades/inicio_curso.png"
+                        src="<?php echo BASE_URL; ?>/assets/content/curso_1/imgActividades/inicio_curso.png"
                         width = "100%"  height ="100%"  alt="" srcset=""></img>
     <!--                </div>-->
                    </div>
@@ -301,31 +309,31 @@ else
         activeUnity();
     };
 </script>
-<script src="../js/plugins/jquery.min.js"></script>
-<script src="../js/plugins/introjs/intro.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/jquery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/introjs/intro.min.js"></script>
 <!-- <script src="../js/app/guia-interactiva_v1.js"></script> -->
 
 
-<script src="../js/app_v3.js"></script>
-<script src="../js/darkMode_v4.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/app_v3.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/darkMode_v4.js"></script>
 <script src="https://kit.fontawesome.com/f8e9d1f17f.js" crossorigin="anonymous"></script>
 
 <!-- jQuery first, then Metro UI JS -->
 
-<script src="../vendors/chartjs/Chart.bundle.min.js"></script>
-<script src="../vendors/qrcode/qrcode.min.js"></script>
-<script src="../vendors/jsbarcode/JsBarcode.all.min.js"></script>
-<script src="../vendors/ckeditor/ckeditor.js"></script>
-<script src="../vendors/metro4/js/metro.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/chartjs/Chart.bundle.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/qrcode/qrcode.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/jsbarcode/JsBarcode.all.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/ckeditor/ckeditor.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/metro4/js/metro.js"></script>
 
 
-<script src="../js/index_v3.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/index_v3.js"></script>
 
-<script src="../js/events_formatos_v1.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/events_formatos_v1.js"></script>
 
-<script src="../vendors/jquery/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.blockUI.js">  </script> 
-<script src="../js/plugins/sweetalert/question_fornat.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/jquery.blockUI.js">  </script> 
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/question_fornat.js"></script>
  
 
 <script>
@@ -497,7 +505,7 @@ function alertaUIFin()
 function cerrarSesion()
 {
 
-    $.post('../login/logout.php',
+    $.post(BASE_URL+'/login/logout.php',
     {
     }, respuestaSalir, 'json');
     setTimeout(function() {

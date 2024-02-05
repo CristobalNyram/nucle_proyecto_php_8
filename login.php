@@ -1,8 +1,13 @@
- 
+<?php
+$__DIR_BASE__LOCAL = dirname(__FILE__)."./";
+require_once($__DIR_BASE__LOCAL."./config/env.php");
+//Auth::requireLogin();
+?> 
 <html lang="es">
-
 <head>
-    <title>Training Midas</title>
+    <title>HOME |<?php echo PROYECTO_NOMBRE; ?></title>
+    <script src="<?php echo BASE_URL; ?>/config/env.js"></script>
+
     <!-- Primary Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <meta charset="UTF-8">
@@ -15,9 +20,9 @@
     <meta name="copyright" content="">
     <meta name="robots" content="index,follow,all">
     <!-- Primary Meta Tags -->
-    <link rel="stylesheet" href="sass/estilos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/sass/estilos.css">
 
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/assets/img/logos/logo.png" type="image/x-icon">
 </head>
 <style lang="">
     .btn-login-dark {
@@ -88,7 +93,7 @@
             <!-- <img  id="" width="200px"  class="logotipo img-logo-academy"  loading="lazy" src="img/logos/academy_training_black.png" alt="midas" hidden>
                 -->
 
-                <img  id="" width="200px"  class="logotipo img-logo-academy"  loading="lazy" src="img/logos/logo_b.png" alt="midas" hidden>
+                <img  id="" width="200px"  class="logotipo img-logo-academy"  loading="lazy" src="<?php echo BASE_URL; ?>/assets/img/logos/logo_b.png" alt="midas" hidden>
             
              
 
@@ -153,10 +158,10 @@
                     
             <!--  imagen de fondo de pantalla -->
             <!-- <img class="banner-image-login banner-image" src="img/back.png" alt="" srcset=""> -->
-            <img class="banner-image" src="img/home.jpg" alt="" srcset="">
+            <img class="banner-image" src="<?php echo BASE_URL; ?>/assets/img/home.jpg" alt="" srcset="">
         
 
-            <img class="shadow" src="img/shadow.svg" alt="" srcset="">
+            <img class="shadow" src="<?php echo BASE_URL; ?>/assets/img/shadow.svg" alt="" srcset="">
        </div>
     </div>
 </body>
@@ -171,15 +176,15 @@
         activeMenu();
     };
 </script>
-<script src="js/plugins/jquery.min.js"></script>
-<script src="js/plugins/typedjs/typed.min.js"></script>
-<script src="js/plugins/sweetalert/sweetalert2@11.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/jquery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/typedjs/typed.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/sweetalert2@11.js"></script>
 
-<script src="js/main.js"></script>
-<script src="js/darkMode_v4.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/main.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/darkMode_v4.js"></script>
 <script src="https://kit.fontawesome.com/f8e9d1f17f.js" crossorigin="anonymous"></script>
-<script src="login/js/loginJS.js"></script>
-<link rel="stylesheet" href="css/login.css">
+<script src="<?php echo BASE_URL; ?>/login/js/loginJS.js"></script>
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/login.css">
 
 <style>
     .typed-cursor {

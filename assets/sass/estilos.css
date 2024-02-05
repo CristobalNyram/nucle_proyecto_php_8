@@ -79,7 +79,7 @@ a:active {
 body {
   transition: 400ms ease all;
   background: #f9f9f9;
-  background-image: url("/img/background.svg");
+  background-image: url("./../img/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -100,7 +100,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 body.dark {
   background: #2D2D2D;
-  background-image: url("/img/background.svg");
+  background-image: url("./../img/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,9 +1,16 @@
 
-<html lang="es">
+<?php
+$__DIR_BASE__LOCAL = dirname(__FILE__)."./";
+require_once($__DIR_BASE__LOCAL."./config/env.php");
+//Auth::requireLogin();
+?>
 
+<html lang="es">
 <head>
-    <title>Training Midas</title>
+    <title>Login |<?php echo PROYECTO_NOMBRE; ?></title>
     <!-- Primary Meta Tags -->
+    <script src="<?php echo BASE_URL; ?>/config/env.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,8 +22,8 @@
     <meta name="copyright" content="">
     <meta name="robots" content="index,follow,all">
     <!-- Primary Meta Tags -->
-    <link rel="stylesheet" href="sass/estilos.css">
-    <link rel="shortcut icon" href="img/logos/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/sass/estilos.css">
+    <link rel="shortcut icon" href="<?php echo BASE_URL; ?>/assets/img/logos/logo.png" type="image/x-icon">
 
 </head>
 <style>
@@ -88,7 +95,7 @@
             </button>
             <div class="logotipo">
 <!--                <a href="/">-->
-                    <img id="id_imagen_logo_midas" class="img-fluid fit" loading="lazy" src="img/logos/logo_b.png" alt="midas">
+                    <img id="id_imagen_logo_midas" class="img-fluid fit" loading="lazy" src="<?php echo BASE_URL; ?>/assets/img/logos/logo_b.png" alt="midas">
 <!--                </a>-->
             </div>
             <!--
@@ -119,15 +126,15 @@
                 <h1 id="titulo-udg" class="bordered-text"> PROGRAMA <br> ANTI ZOMBIE</h1>
                 <p hidden>Para docentes y estudiantes</p>
                 
-                <button onclick="window.location.href = 'login.php'" style="background-color: black;"> ACCEDER</button>
+                <button onclick="window.location.href = BASE_URL+'/login.php'" style="background-color: black;"> ACCEDER</button>
             </div>
             
             <!-- Fondo de la pantalla -->
             <!-- <img class="banner-image-login banner-image" src="img/back.png" alt="" srcset=""> -->
-            <img class="banner-image-login banner-image" src="img/home.jpg" alt="" srcset="">
+            <img class="banner-image-login banner-image" src="<?php echo BASE_URL; ?>/assets/img/home.jpg" alt="" srcset="">
 
             
-            <img class="shadow" src="img/shadow.svg" alt="" srcset="">
+            <img class="shadow" src="<?php echo BASE_URL; ?>/assets/img/shadow.svg" alt="" srcset="">
        </div>
     </div>
 </body>
@@ -159,8 +166,8 @@ function animarTexto() {
 
     window.onload = animarTexto;
 </script>-->
-<script src="js/plugins/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/darkMode_v4.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/plugins/jquery.min.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/main.js"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/darkMode_v4.js"></script>
 <script src="https://kit.fontawesome.com/f8e9d1f17f.js" crossorigin="anonymous"></script>
 </html>

@@ -34,7 +34,7 @@ ALTER TABLE usuarios_historico_acceso ADD FOREIGN KEY (id_usuario) REFERENCES us
 CREATE TABLE menu_actividades (
     id_menu     int(10) unsigned NOT NULL AUTO_INCREMENT,
     nombre       varchar(255) NOT NULL,
-    padre        int(10) unsigned NOT NULL
+    padre        int(10) unsigned NOT NULL,
     formato      varchar(255) NOT NULL,
     tipo         varchar(255) NOT NULL,
     imagen         text,

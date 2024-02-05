@@ -13,11 +13,11 @@ btnSwitch.addEventListener('click', () => {
         $(".fg-text-actividad").removeClass('active-negro');
         $(".fg-text-actividad").addClass('active-blanco');
         localStorage.setItem('dark-mode', 'true');
-        $(".video").attr("src","../img/icon/VIDEO.png");
-        $(".pdf").attr("src","../img/icon/PDF.png");
-        $(".ejercicio").attr("src","../img/icon/ejercicio.png");
-        $(".unidad").attr("src","../img/icon/unidadd.png");
-        $(".evaluacion").attr("src","../img/icon/evaluacion.png");
+        $(".video").attr("src",BASE_URL+"/assets/img/icon/VIDEO.png");
+        $(".pdf").attr("src",BASE_URL+"/assets/img/icon/PDF.png");
+        $(".ejercicio").attr("src",BASE_URL+"/assets/img/icon/ejercicio.png");
+        $(".unidad").attr("src",BASE_URL+"/assets/img/icon/unidadd.png");
+        $(".evaluacion").attr("src",BASE_URL+"/assets/img/icon/evaluacion.png");
         
         
         $(".form-field").removeClass("input-login-white").addClass("input-login"); 
@@ -32,10 +32,10 @@ btnSwitch.addEventListener('click', () => {
         $(".logotipo-app img").attr("src","../img/logos/academy_training_black.png");
         */
 
-        $("#id_imagen_logo_midas").attr("src","img/logos/logo_b.png");
-        $(".banner-image-login").attr("src","img/home.jpg");
-        $(".img-logo-academy").attr("src","img/logos/logo_b.png");
-        $(".logotipo-app img").attr("src","../img/logos/logo_b.png");
+        $("#id_imagen_logo_midas").attr("src",BASE_URL+"/assets/img/logos/logo_b.png");
+        $(".banner-image-login").attr("src",BASE_URL+"/assets/img/home.jpg");
+        $(".img-logo-academy").attr("src",BASE_URL+"/assets/img/logos/logo_b.png");
+        $(".logotipo-app img").attr("src",BASE_URL+"/assets/img/logos/logo_b.png");
 
     } 
     else 
@@ -43,11 +43,11 @@ btnSwitch.addEventListener('click', () => {
         $(".fg-text-actividad").addClass('active-negro');
         $(".fg-text-actividad").removeClass('active-blanco');
         localStorage.setItem('dark-mode', 'false');
-        $(".video").attr("src","../img/icon/VIDEO_2.png");
-        $(".pdf").attr("src","../img/icon/PDF_2.png");
-        $(".ejercicio").attr("src","../img/icon/ejercicio_2.png");
-        $(".unidad").attr("src","../img/icon/unidadd_2.png");
-        $(".evaluacion").attr("src","../img/icon/evaluacion_2.png");
+        $(".video").attr("src",BASE_URL+"/assets/img/icon/VIDEO_2.png");
+        $(".pdf").attr("src",BASE_URL+"/assets/img/icon/PDF_2.png");
+        $(".ejercicio").attr("src",BASE_URL+"/assets/img/icon/ejercicio_2.png");
+        $(".unidad").attr("src",BASE_URL+"/assets/img/icon/unidadd_2.png");
+        $(".evaluacion").attr("src",BASE_URL+"img/icon/evaluacion_2.png");
         
         
         $(".form-field").removeClass("input-login").addClass("input-login-white"); 
@@ -63,10 +63,10 @@ btnSwitch.addEventListener('click', () => {
         $(".logotipo-app img").attr("src","../img/logos/academy_training_white.png");
         */
 
-        $("#id_imagen_logo_midas").attr("src","img/logos/logo.png");
-        $(".banner-image-login").attr("src","img/home.jpg");
-        $(".img-logo-academy").attr("src","img/logos/logo.png");
-        $(".logotipo-app img").attr("src","../img/logos/logo.png");
+        $("#id_imagen_logo_midas").attr("src",BASE_URL+"/assets/img/logos/logo.png");
+        $(".banner-image-login").attr("src",BASE_URL+"/assets/img/home.jpg");
+        $(".img-logo-academy").attr("src",BASE_URL+"/assets/img/logos/logo.png");
+        $(".logotipo-app img").attr("src",BASE_URL+"/assets/img/logos/logo.png");
        
     }
 });
