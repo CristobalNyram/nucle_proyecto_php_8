@@ -46,7 +46,7 @@ function respuestaIniciarSesion(respuesta)
             break;
         case "03":
             alert("Conexion Incorrecta");
-            window.location.href = './';
+            window.location.href = BASE_URL;
             break;
         case "a":
             window.location.href = 'user/client/';

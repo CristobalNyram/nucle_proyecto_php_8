@@ -16,8 +16,8 @@ define("CURRENT_URL",$_SERVER['REQUEST_URI']);
 // echo CURRENT_URL;
 // die();
 // HELPERS INI
-include_once DIR . "./../app/controllers/Auth.php";
-include_once DIR . "./../app/controllers/Redirection.php";
-include_once DIR . "./../app/controllers/Debugger.php";
-include_once DIR . "./../app/controllers/Session.php";
+include_once DIR . "./../app/helpers/Auth.php";
+include_once DIR . "./../app/helpers/Redirection.php";
+include_once DIR . "./../app/helpers/Debugger.php";
+include_once DIR . "./../app/helpers/Session.php";
 

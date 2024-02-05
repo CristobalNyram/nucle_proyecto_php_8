@@ -1,10 +1,8 @@
 <?php
 $__DIR_BASE__LOCAL = dirname(__FILE__)."./../../";
 require_once($__DIR_BASE__LOCAL."config/env.php");
-//Auth::requireLogin();
-?>
+//Auth::requireLogin();s
 
-<?php
 if(!isset($_SESSION)) 
 { 
     error_reporting(E_ALL);

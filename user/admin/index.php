@@ -27,6 +27,7 @@ else
 <head>
   
     <title>Inicio |<?php echo PROYECTO_NOMBRE; ?></title>
+    <!-- env js tiene la variable global de la BASE_URL -->
     <script src="<?php echo BASE_URL; ?>/config/env.js"></script>
 
     <!-- Primary Meta Tags -->
