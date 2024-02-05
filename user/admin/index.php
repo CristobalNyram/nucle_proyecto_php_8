@@ -1,5 +1,7 @@
 <?php
 $__DIR_BASE__LOCAL = dirname(__FILE__)."./../../";
+$version = time();; 
+
 require_once($__DIR_BASE__LOCAL."config/env.php");
 //Auth::requireLogin();
 ?>
@@ -110,64 +112,7 @@ else
     include($__DIR_BASE__LOCAL."includes/layouts/header.php");
     ?>
     
-        <div class="container-app" id="container-app">
-            <div class="section-header">
-                <section class="center">
-                    <button  class="btn-menu-app" id="btn-menu-app">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div class="logotipo logotipo-app">
-                        <!--<a href="../">-->
-                        <!-- <img class="" loading="lazy" src="../img/logos/academy_training_black.png" alt="midas"> -->    
-                        <img style ="width: 75px; height: 35px;" class="" loading="lazy" src="<?php echo BASE_URL; ?>/assets/img/logos/logo.png" alt="midas">
-                            
-                        <!--</a>-->
-                    </div>
-                </section>
-                <section class="center">
-                    <div class="account hover">
-                        <a href="#" class="app-bar-item">
-                        <div class="btn-account">
-                            <i class="fas fa-user-circle"></i>
-                            <span class="name"><?php echo $usuario ?></span>
-                        </div>
-                        </a>
-                        <div class="menu-account" id="menu-account">
-                            <div class="mode center">
-                                <button class="switch" id="switch">
-                                    <span><i class="fas fa-sun"></i></span>
-                                    <span><i class="fas fa-moon"></i></span>
-                                </button>
-                            </div>
-                            <hr>
-              
-
-                            <button class="btn-logout btn-close-session" onclick="cerrarSesion()">
-                                Cerrar sesión
-                            </button>
-                        </div>
-                    </div>
-                    
-                </section>
-            </div>
-            <div class="background-img">
-                <div class="container">
-                    <div class="banner">
-                        <div id="content-wrapper" class="content-inner h-100" style="overflow-y: auto">
-                            <div id = "banner-content" class="banner-content">
-                                                   
-                            </div>
-                        </div>
-                        
-    <!--                <div id="divImagenMain">-->
-                        <img id="mi_imagen" class="banner-image"
-                        src="<?php echo BASE_URL; ?>/assets/content/curso_1/imgActividades/inicio_curso.png"
-                        width = "100%"  height ="100%"  alt="" srcset=""></img>
-    <!--                </div>-->
-                   </div>
-                </div>
-            </div>
-        </div>
+     
     
         <input type="hidden" name="txtH_sexo" id= "txtH_sexo" 
         value="<?php echo $sexo; ?>" />   
@@ -188,33 +133,6 @@ else
         activeUnity();
     };
 </script>
-<script src="<?php echo BASE_URL; ?>/assets/js/plugins/jquery.min.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/js/plugins/introjs/intro.min.js"></script>
-<!-- <script src="../js/app/guia-interactiva_v1.js"></script> -->
-
-
-<script src="<?php echo BASE_URL; ?>/assets/js/app_v3.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/js/darkMode_v4.js"></script>
-<script src="https://kit.fontawesome.com/f8e9d1f17f.js" crossorigin="anonymous"></script>
-
-<!-- jQuery first, then Metro UI JS -->
-
-<script src="<?php echo BASE_URL; ?>/assets/vendors/chartjs/Chart.bundle.min.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/vendors/qrcode/qrcode.min.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/vendors/jsbarcode/JsBarcode.all.min.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/vendors/ckeditor/ckeditor.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/vendors/metro4/js/metro.js"></script>
-
-
-<script src="<?php echo BASE_URL; ?>/assets/js/index_v3.js"></script>
-
-<script src="<?php echo BASE_URL; ?>/assets/js/events_formatos_v1.js"></script>
-
-<script src="<?php echo BASE_URL; ?>/assets/vendors/jquery/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="<?php echo BASE_URL; ?>/assets/js/jquery.blockUI.js">  </script> 
-<script src="<?php echo BASE_URL; ?>/assets/js/plugins/sweetalert/question_fornat.js"></script>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
 
 <script>
 var imagenPrincipal =   '../content/curso_1/imgActividades/inicio_curso.png';
@@ -408,9 +326,8 @@ function getValueItem (itemCadena)
 
 </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/js/app/functionsClient.js"></script>
-<script src="<?php echo BASE_URL; ?>/assets/js/app/functionsAuth.js"></script>
-
+<script src="<?php echo BASE_URL; ?>/assets/js/app/functionsClient.js?v=<?php echo $version; ?>"></script>
+<script src="<?php echo BASE_URL; ?>/assets/js/app/functionsAuth.js?v=<?php echo $version; ?>"></script>
 
 </html>
 <?php
