@@ -118,11 +118,11 @@ else
                         if($mA1 == true)  {
                         ?>  <p class="title" onclick="activeModule('module1');"> 
                             <i class="fas fa-book"></i> 
-                            LIBRO  <?php
+                           MI LIBRO  <?php
                         }   else    {   
                         ?>  <p class="fg-gray title" title="Módulo bloqueado"> 
                             <i class="fas fa-lock"></i> 
-                            LIBRO<?php  
+                            MI LIBRO<?php  
                         }
                         ?>
                         <i id="iconmodule1" class="fa fa-long-arrow-right"></i>

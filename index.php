@@ -132,15 +132,26 @@ require_once($__DIR_BASE__LOCAL."./config/env.php");
                 <!-- <img class="img-logo-academy" src="img/logos/academy_training_black.png" alt="" srcset=""> -->
                  
 
-                <h1 id="titulo-udg" class="bordered-text"> EPICK BOOK</h1>
+                <h1 
+                id="titulo-udg"  
+                class="bordered-text"
+                style="color:#00afe8;"
+                > EPICK BOOK</h1>
                 <p hidden>Para docentes y estudiantes</p>
                 
-                <button onclick="window.location.href = BASE_URL+'/login.php'" style="background-color: black;"> ACCEDER</button>
+                <button 
+                onclick="window.location.href = BASE_URL+'/login.php'" 
+                style="
+                background-color: black;    
+                color: #00afe8;
+                font-weight: bold;"
+                >
+                ACCEDER</button>
             </div>
             
             <!-- Fondo de la pantalla -->
             <!-- <img class="banner-image-login banner-image" src="img/back.png" alt="" srcset=""> -->
-            <img class="banner-image-login banner-image" src="<?php echo BASE_URL; ?>/assets/img/home.jpg" alt="" srcset="">
+            <img class="banner-image-login banner-image" src="<?php echo BASE_URL; ?>/assets/img/home_principal.jpg" alt="" srcset="">
 
             
             <img class="shadow" src="<?php echo BASE_URL; ?>/assets/img/shadow.svg" alt="" srcset="">
