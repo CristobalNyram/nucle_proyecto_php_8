@@ -1,6 +1,7 @@
 <?php
 $__DIR_BASE__LOCAL = dirname(__FILE__)."./../../";
-$version = time();; 
+$version = time();
+define('TIPO_USUARIO', 'agente');
 
 require_once($__DIR_BASE__LOCAL."config/env.php");
 //Auth::requireLogin();

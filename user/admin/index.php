@@ -1,6 +1,7 @@
 <?php
 $__DIR_BASE__LOCAL = dirname(__FILE__)."./../../";
-$version = time();; 
+$version = time();
+define('TIPO_USUARIO', 'admin');
 
 require_once($__DIR_BASE__LOCAL."config/env.php");
 //Auth::requireLogin();
@@ -133,7 +134,9 @@ else
         activeUnity();
     };
 </script>
-
+<?php
+    include($__DIR_BASE__LOCAL."includes/layouts/footer-scripts.php");
+?>
 <script>
 var imagenPrincipal =   '../content/curso_1/imgActividades/inicio_curso.png';
 var urlImagenPrincipal   =   imagenPrincipal;
