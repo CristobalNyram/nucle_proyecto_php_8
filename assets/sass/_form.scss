@@ -1,0 +1,120 @@
+.form-container {
+    width: 30%;
+    .form{
+        .form-group {
+            position: relative;
+            padding: 15px 0 0;
+            margin-top: 10px;
+            width: 100%;
+            .form-field {
+                width: 100%;
+                border: 0;
+                border-bottom: 2px solid $white;
+                outline: 0;
+                font-size: 1.3rem;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s;
+                &::placeholder {
+                    color: transparent;
+                }
+                &:placeholder-shown {
+                    ~ {
+                    .form-label {
+                        font-size: 1.3rem;
+                        cursor: text;
+                        top: 20px;
+                    }
+                    }
+                }
+                &:focus {
+                    padding-bottom: 6px;
+                    border-width: 3px;
+                    border-color: $yellow;
+                    border-image-slice: 1;
+                    ~ {
+                        .form-label {
+                            position: absolute;
+                            top: 0;
+                            display: block;
+                            transition: 0.2s;
+                            font-size: 1rem;
+                            color: $yellow;
+                            font-weight: 600;
+                        }
+                        .form-icon {
+                            transition: 0.2s;
+                            color: $yellow;
+                        }
+                    }
+                }
+                &:required{
+                    box-shadow: none;
+                }
+                &:invalid{
+                    box-shadow: none;
+                }
+            }
+            .form-label {
+                position: absolute;
+                top: 0;
+                display: block;
+                transition: 0.2s;
+                font-size: 1rem;
+                color: $white;
+            }
+            .form-icon {
+                position: absolute;
+                top: 45%;
+                right: 0;
+                display: block;
+                transition: 0.2s;
+                font-size: 1.25rem;
+                color: $white;
+            }
+        }
+        .checkbox{
+            color: $white;
+            padding: 1rem 0;
+        }
+        .link{
+            color: $white;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+        .btn-send {
+            color: $white;
+            border: $white 1px solid;
+            font-size: 20px;
+            padding: 1rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        input, textarea{
+            border: none;
+            border-bottom: 2px solid $black;
+            color: $yellow;
+            transition: all ease-in 300ms;
+            border-radius: 0;
+            outline: none;
+            outline-style: none;
+            &:focus {
+              border-bottom: 2px solid $yellow;
+              color: $yellow;
+              transition: all ease-in 300ms;
+              outline: none;
+              outline-width: 0;
+              box-shadow: none;
+              -moz-box-shadow: none;
+              -webkit-box-shadow: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 720px) {
+    .form-container {
+        width: 100%;
+        .form{
+        }
+    }
+}

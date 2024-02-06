@@ -1,0 +1,209 @@
+body {
+    -webkit-transition: 400ms ease all;
+    -moz-transition: 400ms ease all;
+    -ms-transition: 400ms ease all;
+    -o-transition: 400ms ease all;
+    transition: 400ms ease all;
+    background: $white;
+    color: $black;
+    &::-webkit-scrollbar {
+        width: 10px;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $black;
+        height: 100px;
+        border-radius: 5px;
+        opacity: 0.5;
+        &:hover {
+            background: $content-black;
+            opacity: 1;
+        }
+    }
+    &.dark {
+        background: $black;
+        color: $white;
+        &::-webkit-scrollbar-thumb {
+            background: $white;
+            height: 100px;
+            border-radius: 5px;
+            opacity: 0.5;
+            &:hover {
+                background: $content-white;
+                opacity: 1;
+            }
+        }
+    }
+}
+.app{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    .nav-bar-app{
+        position: fixed;
+        width: 500px;
+        height: 100%;
+        z-index: 1000;
+        background: $white;
+        color: $black;
+        // border-right: .5px solid rgb(187, 187, 187);
+        // background-image: url('../../img/banner.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: .3s ease all;
+        backface-visibility: hidden;
+        overflow-y: auto;
+        transform: translateX(0%);
+        border: 1px solid rgba(0,0,0,0.12);
+        box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2)!important;
+        -webkit-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+        -moz-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+        padding: 1rem 0;
+        h3{
+            padding: 0 1rem;
+            font-size:20px;
+        }
+        body.dark & {
+            background: $black;
+            color: $white;
+        }
+    }
+    .btn-menu-app {
+        z-index: 1001;
+        cursor: pointer;
+        i{
+            font-size: 24px;
+        }
+    }
+    .disable-nav-bar-app{
+        transform: translateX(-275%);
+    }
+    .container-app{
+        width: calc(100% - 475px);
+        margin-left: 475px;
+        background: $content-white;
+        color: $black;
+        -webkit-transition: all 500ms ease-in-out 0s;
+        -o-transition: all 500ms ease-in-out 0s;
+        transition: all 500ms ease-in-out 0s;
+        body.dark & {
+            background: $content-black;
+            color: $white;
+        }
+    }
+    .full-container-app{
+        width: 100%;
+        height: 500 px;
+        margin-left: 0px;
+    }
+    .section-header{
+        padding: 0.25rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // border: 1px solid rgba(0,0,0,0.12);
+        box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2)!important;
+        -webkit-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+        -moz-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+        .logotipo{
+            margin-left: 1rem;
+            text-align: center;
+            img{
+                width: 80px;
+            }
+        }
+        .account{
+            user-select: none;
+            height: 30px;
+            position: relative;
+            display: block;
+            cursor: pointer;
+            z-index: 5;
+            .btn-account{
+                height: 30px;
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                i{
+                    font-size: 24px;
+                    margin-right: 0.5rem;
+                }
+            }
+            &:hover .menu-account{
+                background: $content-white;
+                box-shadow: 0px 0px 6px 2px rgba(100, 100, 100, 0.2)!important;
+                -webkit-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+                -moz-box-shadow:  0px 0px 6px 2px rgba(100, 100, 100, 0.200)!important;
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                border-radius: 4px;
+                hr{
+                    margin: .5rem 0;
+                    background: #51515100;
+                }
+                body.dark & {
+                    background: $content-black;
+                }
+            }
+            .menu-account{
+                display: none;
+            }
+        }
+    }
+    .container{
+        width: 100%;
+        padding: 2rem 2rem;
+    }
+}
+@media screen and (max-width: 980px) {
+    .app{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        .nav-bar-app{
+            position: absolute;
+            width: 475px;
+            height: 100%;
+            overflow-y: auto;
+            top: 65px;
+            left: 0;
+            transform: translateX(0%);
+        }
+        .disable-nav-bar-app{
+            transform: translateX(-475px);
+        }
+        .section-header{
+            padding: 0.25rem 1.25rem;
+        }
+        .container-app{
+            width: 100%;
+            margin-left: 0px;
+            background: $content-white;
+            color: $black;
+            -webkit-transition: all 500ms ease-in-out 0s;
+            -o-transition: all 500ms ease-in-out 0s;
+            transition: all 500ms ease-in-out 0s;
+            body.dark & {
+                background: $content-black;
+                color: $white;
+            }
+        }
+        .full-container-app{
+            width: 100%;
+            margin-left: 0px;
+        }
+        .container{
+            width: 100%;
+            padding: 1.252rem;
+        }
+    }
+}

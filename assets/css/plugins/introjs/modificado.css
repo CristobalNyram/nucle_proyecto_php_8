@@ -1,0 +1,39 @@
+
+.introjs-tooltiptext {
+    padding: 20px;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.introjs-tooltip {
+    min-width: 320px !important;
+  }
+  
+  /* Estilos para pantallas de hasta 480px de ancho */
+  @media (max-width: 480px) {
+    .introjs-tooltip {
+      min-width: 200px !important;
+    }
+  }
+  
+  /* Estilos para pantallas de 481px a 768px de ancho */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .introjs-tooltip {
+      min-width: 400px !important;
+    
+    }
+  }
+  
+  /* Estilos para pantallas de 769px a 1024px de ancho */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .introjs-tooltip {
+      min-width: 600px !important;
+    }
+  }
+  
+  /* Estilos para pantallas de más de 1024px de ancho */
+  @media (min-width: 1025px) {
+    .introjs-tooltip {
+      min-width: 800px !important;
+    }
+  }
